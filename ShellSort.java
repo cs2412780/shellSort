@@ -75,6 +75,12 @@ public class ShellSort {
 		//System.out.println("m: " + m);
 	}
 	
+	
+	
+	/**
+	 * a function that uses iterative shell sort to sort an array.
+	 * @param array The array that to be sorted
+	 */
 	public static void shellSortByIteration(int[] array) {
 		int k = 1;
 		int index = 0;
@@ -101,6 +107,11 @@ public class ShellSort {
 		}//end while
 	}//end shellSortByIteration
 	
+	
+	/**
+	 * a function that uses recursive shell sort to sort an array.
+	 * @param array The array that to be sorted
+	 */
 	public static void shellSortByRecursion(int[] array) {
 		int k = 1;
 		while((2 * k + 1) < array.length) {
@@ -109,6 +120,13 @@ public class ShellSort {
 		traversalElements(array, k, 0);	
 	}//end shellSortByRecursion
 	
+	
+	/**
+	 * a function goes over all elements in the array.
+	 * @param array the target array
+	 * @param k the space between the two elements
+	 * @param index the entry that on the left of the other one
+	 */
 	private static void traversalElements(int[] array, int k, int index) {
 		//System.out.println(index);
 		if(k >= 1 && (index + k) < array.length) {
@@ -120,6 +138,15 @@ public class ShellSort {
 		}
 	}//end traversalElements
 	
+	
+
+
+	/**
+	 * compare and swap entries when necessary.
+	 * @param array the target array
+	 * @param k the space between the two entries
+	 * @param index the entry on the left of the other one
+	 */
 	private static void compareElements(int[] array, int k, int index) {
 		
 		if(index >= 0 && array[index] > array[index + k]) {
